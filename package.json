@@ -1,6 +1,6 @@
 {
   "name": "minidotenv",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Small utility function that loads env file with the option to specify file path.",
   "main": "dist/index.js",
   "scripts": {
