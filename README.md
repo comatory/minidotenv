@@ -109,15 +109,17 @@ This file is a simple text file. Name it `.env` and place it at the root of your
 
 ```
 FOO=BAR
-HELLO="WORLD"
-SENTENCE="is made of words"
+SENTENCE=is made of words
 PORT=3000
 SIZE=1.23
 # Comment
-VERSION="1.2.3"
+VERSION=1.2.3
 ```
 
 The values are coerced into strings if the value is not a number (integer or float). The parsing is very simple.
+**IMPORTANT! If you add quotes to values they will not be stripped**.
+This means using this: `FOO="BAR"` will result it key `FOO` having value
+`'"BAR"'` (includes the double quotes). Quotes are not neccessary in `env` file and removing them might cause some troubles (for example passwords including a quote).
 
 ## Development
 

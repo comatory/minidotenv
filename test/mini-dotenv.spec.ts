@@ -82,25 +82,14 @@ describe('MiniDotenv', () => {
   })
 
 
-  it('should not add extra quotes to quoted text', () => {
+  it('should keep quotes on quoted text', () => {
     require('fs').__setMockFileContents(
       `${process.cwd()}/.env`,
       'FOO="BAR"'
     )
     const conf = minidotenv()
 
-    expect(conf('FOO')).to.equal('BAR')
-  })
-
-
-  it('should not add extra quotes to single-quoted text', () => {
-    require('fs').__setMockFileContents(
-      `${process.cwd()}/.env`,
-      "FOO='BAR'"
-    )
-    const conf = minidotenv()
-
-    expect(conf('FOO')).to.equal('BAR')
+    expect(conf('FOO')).to.equal('"BAR"')
   })
 
 
@@ -111,7 +100,7 @@ describe('MiniDotenv', () => {
     )
     const conf = minidotenv()
 
-    expect(conf('FOO')).to.equal("{a: 1, b: 2}")
+    expect(conf('FOO')).to.equal("{'a': 1, 'b': 2}")
   })
 
 

@@ -29,7 +29,7 @@ const parseEnvFileContents = (contents: string): ConfigObject => {
 
     // NOTE: Very simple parsing, basically just allow to accept
     // numbers (incl. floats) or strings
-    const parsedValue = Number(value) || String(value).replace(/\"|\'/g, '')
+    const parsedValue = Number(value) || String(value)
 
     return {
       ...configObject,
