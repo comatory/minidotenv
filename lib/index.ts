@@ -66,7 +66,7 @@ const miniDotenv = (options: Options = {}): (key: string) => string | number | u
       return configObject[key]
     }
   } catch (err) {
-    if (err.code === 'ENOENT') {
+    if (err instanceof Object && 'code' in err && err.code === 'ENOENT') {
       console.warn(`No env file found at ${envFilePath}`)
       return () => undefined
     }
