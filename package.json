@@ -15,6 +15,9 @@
     "type": "git",
     "url": "https://github.com/comatory/minidotenv"
   },
+  "engines": {
+    "node": "16.20.2"
+  },
   "keywords": [
     "dotenv",
     "env",
